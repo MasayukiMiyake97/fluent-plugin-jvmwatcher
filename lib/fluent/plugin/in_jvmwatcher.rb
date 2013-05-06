@@ -5,11 +5,6 @@ require 'json'
 class JvmwatcherInput < Input
   Plugin.register_input('jvmwatcher', self)
 
-  config_param :tag, :string
-  config_param :log_interval, :integer, :default => 1000
-  config_param :log_buff_num, :integer, :default => 1
-  config_param :jvm_refind_interval, :integer, :default => 20000
-  
   def initialize
     super
     @jvmwatcher_connamd = './JvmWatcher.sh'
@@ -25,21 +20,22 @@ class JvmwatcherInput < Input
     Dir::chdir("fluent-plugin-jvmwatcher/lib/fluent/plugin/jvmwatcher/bin")
   end
 
-  def configure(conf)
-    super
-    # @path = conf['path']
-  end
+  #def configure(conf)
+  #  @path = conf['path']
+  #end
 
+  config_param :tag, :string
+  config_param :log_interval, :integer, :default => 1000
+  config_param :log_buff_num, :integer, :default => 1
+  config_param :jvm_refind_interval, :integer, :default => 20000
 
   def start
-    super
     @io = IO.popen(@jvmwatcher_connamd, "r")
     @pid = @io.pid
     @thread = Thread.new(&method(:run))
   end
 
   def shutdown
-    super
     Process.kill(:TERM, @pid)
     if @thread.join(60)
       return

@@ -23,6 +23,7 @@ unless ENV.has_key?('VERBOSE')
 end
 
 require 'fluent/plugin/in_jvmwatcher'
+require 'fluent/plugin/jvmwatcher_util'
 
 class Test::Unit::TestCase
 end

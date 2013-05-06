@@ -1,6 +1,6 @@
 require 'helper'
 
-class DataCounterOutputTest < Test::Unit::TestCase
+class JvmWatcherInputTest < Test::Unit::TestCase
   def setup
     Fluent::Test.setup
   end
