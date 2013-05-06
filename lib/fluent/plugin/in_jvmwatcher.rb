@@ -25,15 +25,21 @@ class JvmwatcherInput < Input
     Dir::chdir("fluent-plugin-jvmwatcher/lib/fluent/plugin/jvmwatcher/bin")
   end
 
+  def configure(conf)
+    super
+    # @path = conf['path']
+  end
 
 
   def start
+    super
     @io = IO.popen(@jvmwatcher_connamd, "r")
     @pid = @io.pid
     @thread = Thread.new(&method(:run))
   end
 
   def shutdown
+    super
     Process.kill(:TERM, @pid)
     if @thread.join(60)
       return
