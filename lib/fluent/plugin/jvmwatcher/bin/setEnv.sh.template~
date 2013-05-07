@@ -1,0 +1,8 @@
+#!/bin/bash
+export WATCHER_LIBPATH=<LIB_PATH>
+export WATCHER_CONFIGPATH=<CONFIG_PATH>
+
+# get JDK path
+pathtojava=$(readlink -e $(which javac))
+export JDK_LIB=${pathtojava%/*/*}/lib
+
