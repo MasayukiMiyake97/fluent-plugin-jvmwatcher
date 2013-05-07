@@ -2,7 +2,5 @@
   [
     { "shortname" : "TestJavaProcess" ,  "pattern" : "(jvmwatcher.test.TestJavaProcess)"},
     { "shortname" : "Tomcat" ,  "pattern" : "(tomcat)"}
-  ],
- "log_interval" : { "interval_time" : 2000 , "buff_log_num" : 2},
- "jvm_interval" : { "interval_time" : 30000}
+  ]
 }
