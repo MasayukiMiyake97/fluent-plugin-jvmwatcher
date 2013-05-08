@@ -2,6 +2,8 @@
 
 localhostname=$(hostname)
 
+source $5
+
 # get JDK path
 #pathtojava=$(readlink -e $(which javac))
 #JDK_LIB=${pathtojava%/*/*}/lib

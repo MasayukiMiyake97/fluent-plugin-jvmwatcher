@@ -30,7 +30,8 @@ class JvmwatcherInput < Input
   config_param :jvm_refind_interval, :integer, :default => 20000
 
   def start
-    command = "#{@jvmwatcher_connamd} NO_CONFIG #{@jvm_refind_interval} #{@log_interval} #{@log_buff_num}"
+    command = "#{@jvmwatcher_connamd} NO_CONFIG #{@jvm_refind_interval} #{@log_interval} #{@log_buff_num} setEnv.sh"
+
     @io = IO.popen(command, "r")
     @pid = @io.pid
     @thread = Thread.new(&method(:run))
