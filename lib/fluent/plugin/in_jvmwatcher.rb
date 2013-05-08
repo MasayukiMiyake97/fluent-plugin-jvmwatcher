@@ -1,6 +1,7 @@
 module Fluent
 
 require 'json'
+require 'fluent/plugin/jvmwatcher_util'
 
 class JvmwatcherInput < Input
   Plugin.register_input('jvmwatcher', self)

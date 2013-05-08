@@ -19,11 +19,11 @@ class JvmWatcherUtilTest < Test::Unit::TestCase
     puts path
     path = JvmwatcherUtil.find_watcher_java_path("bin", JvmwatcherUtil::SetEnvFileName)
     puts path
-    path = JvmwatcherUtil.find_watcher_java_path("log", JvmwatcherUtil::Log4JFileName)
+    path = JvmwatcherUtil.find_watcher_java_path("config", JvmwatcherUtil::Log4JFileName)
     puts path
     path = JvmwatcherUtil.find_watcher_java_path("bin", JvmwatcherUtil::SetEnvTemplateFileName)
     puts path
-    path = JvmwatcherUtil.find_watcher_java_path("log", JvmwatcherUtil::Log4JTemplateFileName)
+    path = JvmwatcherUtil.find_watcher_java_path("config", JvmwatcherUtil::Log4JTemplateFileName)
     puts path
   end
 
