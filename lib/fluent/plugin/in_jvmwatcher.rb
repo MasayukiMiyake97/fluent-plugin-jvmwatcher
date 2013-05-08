@@ -8,21 +8,9 @@ class JvmwatcherInput < Input
   def initialize
     super
     @jvmwatcher_connamd = './JvmWatcher.sh'
-    $LOAD_PATH.map {|lp|
-      path = File.join(lp, "fluent/plugin")
-      if File.directory?(path)
-        Dir.glob(["**/bin/JvmWatcher.sh", "**/config"]).each do |name|
-          puts name
-        end
-      end
-    }
 
     Dir::chdir("fluent-plugin-jvmwatcher/lib/fluent/plugin/jvmwatcher/bin")
   end
-
-  #def configure(conf)
-  #  @path = conf['path']
-  #end
 
   config_param :tag, :string
   config_param :log_interval, :integer, :default => 1000
