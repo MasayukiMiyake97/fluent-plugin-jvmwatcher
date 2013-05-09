@@ -27,4 +27,32 @@ class JvmWatcherUtilTest < Test::Unit::TestCase
     puts path
   end
 
+  def test_make_setenv_file
+
+    path = JvmwatcherUtil.make_setenv_file
+    puts "setenv=" << path
+
+  end
+
+  def test_make_log4j_file
+
+    path = JvmwatcherUtil.make_log4j_file
+    puts "setenv=" << path
+
+  end
+
+  def test_find_filter_config_path
+
+    path = JvmwatcherUtil.find_filter_config_path(nil)
+    puts "nil  config=" + path
+    path = JvmwatcherUtil.find_filter_config_path("config_sample.json")
+    puts "config_sample.json  config=" + path
+    path = JvmwatcherUtil.find_filter_config_path("/home/miyake/Develop/Project/fluent/fluent-plugin-jvmwatcher/lib/fluent/plugin/jvmwatcher/config/config_sample.json")
+    puts "full path  config=" + path
+    path = JvmwatcherUtil.find_filter_config_path("config.json")
+    puts "nil  config=" + path
+
+  end
+
+
 end

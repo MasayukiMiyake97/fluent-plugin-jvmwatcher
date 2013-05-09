@@ -14,7 +14,7 @@
   <appender name="logfile" class="org.apache.log4j.DailyRollingFileAppender">
     <param name="Threshold" value="DEBUG" />
     <param name="Encoding" value="UTF-8" />
-    <param name="File" value="../log/log.log" />
+    <param name="File" value="fluent-plugin-jvmwatcher/lib/fluent/plugin/jvmwatcher/log/log.log" />
     <param name="Append" value="true" />
     <param name="DatePattern" value="'.'yyyy-MM-dd" />
     <layout class="org.apache.log4j.PatternLayout">
@@ -25,7 +25,7 @@
   <appender name="errfile" class="org.apache.log4j.DailyRollingFileAppender">
     <param name="Threshold" value="ERROR" />
     <param name="Encoding" value="UTF-8" />
-    <param name="File" value="../log/err.log" />
+    <param name="File" value="fluent-plugin-jvmwatcher/lib/fluent/plugin/jvmwatcher/log/err.log" />
     <param name="Append" value="true" />
     <param name="DatePattern" value="'.'yyyy-MM-dd" />
     <layout class="org.apache.log4j.PatternLayout">

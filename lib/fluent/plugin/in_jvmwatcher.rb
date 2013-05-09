@@ -8,18 +8,21 @@ class JvmwatcherInput < Input
 
   def initialize
     super
-    @jvmwatcher_connamd = './JvmWatcher.sh'
-
-    Dir::chdir("fluent-plugin-jvmwatcher/lib/fluent/plugin/jvmwatcher/bin")
+    @log4j_path = JvmwatcherUtil.make_log4j_file
+    @setenv_path = JvmwatcherUtil.make_setenv_file
+    @bin_path = JvmwatcherUtil.find_watcher_java_path(JvmwatcherUtil::BinDirName)
+    @jvmwatcher_connamd = File.join(@bin_path, "JvmWatcher.sh")
   end
 
   config_param :tag, :string
+  config_param :filter_config_path, :string, :default => nil
   config_param :log_interval, :integer, :default => 1000
   config_param :log_buff_num, :integer, :default => 1
   config_param :jvm_refind_interval, :integer, :default => 20000
 
   def start
-    command = "#{@jvmwatcher_connamd} NO_CONFIG #{@jvm_refind_interval} #{@log_interval} #{@log_buff_num} setEnv.sh"
+    @config_path = JvmwatcherUtil.find_filter_config_path(@filter_config_path)
+    command = "#{@jvmwatcher_connamd} '#{@config_path}' #{@jvm_refind_interval} #{@log_interval} #{@log_buff_num} #{@setenv_path}"
 
     @io = IO.popen(command, "r")
     @pid = @io.pid
