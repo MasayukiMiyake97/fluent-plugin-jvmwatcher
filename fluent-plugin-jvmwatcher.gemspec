@@ -6,8 +6,8 @@ Gem::Specification.new do |gem|
   gem.version       = "0.1.0"
   gem.authors       = ["MasayukiMiyake"]
   gem.email         = ["masayukimiyake97@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{It is the input plugin of fluentd which collects the condition of Java VM.}
+  gem.summary       = %q{It is the input plugin of fluentd which collects the condition of Java VM.}
   gem.homepage      = "https://github.com/MasayukiMiyake97/fluent-plugin-jvmwatcher.git"
 
   gem.rubyforge_project = "fluent-plugin-jvmwatcher"
