@@ -121,6 +121,11 @@ In the date and time which is output at the head of the log, it is generating fr
 
 ログの先頭に出力されている日時は、実際にJavaVMから情報を取得した時間である"logtime"から生成しています。
 
+##Requirements
+  JDK >= 1.6
+  
+  * On the Linux ( CentOS ), it is OpenJDK In 1.6 pieces of environment, it is doing an operations check.The operations check doesn't go but probably, it works on Ubuntu.
+
 ##Copyright
 Copyright (c) 2013 MasayukiMiyake
 
