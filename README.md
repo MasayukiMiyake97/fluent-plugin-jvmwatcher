@@ -1,10 +1,8 @@
 Java VM status input plugin for Fluent
 ====
+fluent-plugin-jvmwatcher is input plugin which collects the CPU usage rate and the memory usage of more than one JavaVM, information on GC to the constant period.
 
-2013/07/06：まだ完成していないため、利用できません...orz
-
-July 6th, 2013: Because it hasn't been complete yet, fluent-plugin-jvmwatcher can not be used by installing it.
-
+fluent-plugin-jvmwatcherは、複数のJavaVMの、CPU使用率やメモリ使用量、GCの情報を、一定周期に収集するinput pluginです。
 
 ## Installation
 
