@@ -125,6 +125,7 @@ In the date and time which is output at the head of the log, it is generating fr
   JDK >= 1.6
   
   * On the Linux ( CentOS ), it is OpenJDK In 1.6 pieces of environment, it is doing an operations check.The operations check doesn't go but probably, it works on Ubuntu.
+  * fluent-plugin-jvmwatcher is using tools.jar which JDK is providing.Therefore, in the JRE environment which tools.jar isn't contained in, it doesn't work.Certainly, use in the environment which JDK is installed in.
 
 ##Copyright
 Copyright (c) 2013 MasayukiMiyake
