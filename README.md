@@ -8,7 +8,7 @@ fluent-plugin-jvmwatcherは、複数のJavaVMの、CPU使用率やメモリ使�
 JavaVMから、CPU使用率やメモリ使用量、GCの情報の収集は、JVMWatcherで行っています。  
 fluent-plugin-jvmwatcherは、内部からJVMWatcherを呼び出すことで、JavaVMの状態を収集しています。  
 
-JVMWatcher -> https://github.com/MasayukiMiyake97/JVMWatcher
+JVMWatcher -> <https://github.com/MasayukiMiyake97/JVMWatcher>
 
 ## Installation
 
@@ -30,7 +30,17 @@ Then fluent automatically loads the plugin installed.
       tag jvmwatcher.log
     </source>
 
-## filtering Configuration
+ 1. log_interval <- It is the interval by which the condition is acquired from JavaVM.The unit is msec.
+ 2. log_buff_num <- It is the collection number of times of the log which outputs log outside.
+ 3. jvm_refind_interval <- It is the interval which updates JavaVM of the collection object.The unit is msec.This value doesn't set an extremely short value.Make 10000 ( msec ) a standard even if it is short.
+ 4. filter_config_path <- filtering Configuration file name.The definition with this item isn't indispensable.
+
+## filtering Configuration file
+When wanting to limit the Java process to measure only to the specific process, create the file which defined the process name to limit by the regular expression.
+Create this definition file in the file with the JSON format which is in the following example.
+
+もし、計測するJavaプロセスを、特定のプロセスだけに限定したい場合は、限定するプロセス名称を正規表現で定義したファイルを作成してください。この定義ファイルは、次の例にあるJSONフォーマットのファイルで作成してください。
+
 filter_config.json
 
     {"target" :
