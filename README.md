@@ -4,6 +4,14 @@ fluent-plugin-jvmwatcher is input plugin which collects the CPU usage rate and t
 
 fluent-plugin-jvmwatcherは、複数のJavaVMの、CPU使用率やメモリ使用量、GCの情報を、一定周期に収集するinput pluginです。
 
+The collection of the CPU usage rate and the memory usage, the information on GC goes in JVMWatcher from JavaVM.
+fluent-plugin-jvmwatcher is collecting the condition of JavaVM in summoning JVMWatcher from inside.
+
+JavaVMから、CPU使用率やメモリ使用量、GCの情報の収集は、JVMWatcherで行っています。
+fluent-plugin-jvmwatcherは、内部からJVMWatcherを呼び出すことで、JavaVMの状態を収集しています。
+
+JVMWatcher -> https://github.com/MasayukiMiyake97/JVMWatcher
+
 ## Installation
 
 
