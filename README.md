@@ -114,3 +114,9 @@ jvmwatcherから出力されたログのサンプルです。
 In the date and time which is output at the head of the log, it is generating from "logtime" which is the time by which the information was acquired actually from JavaVM.
 
 ログの先頭に出力されている日時は、実際にJavaVMから情報を取得した時間である"logtime"から生成しています。
+
+##Copyright
+Copyright (c) 2013 MasayukiMiyake
+
+##License
+Apache License, Version 2.0
