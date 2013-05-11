@@ -50,6 +50,9 @@ filter_config.json
       ]
     }
 
+ 1. shortname <- It sets the simple name of the process.
+ 2. pattern <- It sets the regular expression to limit a process.
+
 There is a sample of the command which outputs the list of the Java process under the directory of fluent-plugin-jvmwatcher which was installed in gem and the definition file of filtering.
 
 gemでインストールした、fluent-plugin-jvmwatcherのディレクトリの下に、Javaプロセスの一覧を出力するコマンドと、フィルタリングの定義ファイルのサンプルがあります。
