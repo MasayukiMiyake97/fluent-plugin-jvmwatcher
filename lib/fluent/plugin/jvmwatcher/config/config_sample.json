@@ -1,6 +1,6 @@
 {"target" : 
   [
     { "shortname" : "TestJavaProcess" ,  "pattern" : "(jvmwatcher.test.TestJavaProcess)"},
-    { "shortname" : "Tomcat" ,  "pattern" : "(tomcat)"}
+    { "shortname" : "Tomcat" ,  "pattern" : "(org.apache.catalina)"}
   ]
 }
