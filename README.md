@@ -25,6 +25,7 @@ Then fluent automatically loads the plugin installed.
     </source>
 
 ## filtering Configuration
+filter_config.json
 
     {"target" :
       [
