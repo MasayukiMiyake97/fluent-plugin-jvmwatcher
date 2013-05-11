@@ -20,7 +20,7 @@ module JvmwatcherUtil
       if File.directory?(path)
 
         # find target directory
-        Dir.glob("**/jvmwatcher/#{dir_name}").each do |path_name|
+        Dir.glob("#{path}/jvmwatcher/#{dir_name}").each do |path_name|
 
           next unless File.directory?(path_name)  # chech directory
 
