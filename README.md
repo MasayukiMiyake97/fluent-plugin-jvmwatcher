@@ -31,7 +31,7 @@ Then fluent automatically loads the plugin installed.
     {"target" :
       [
         { "shortname" : "TestJavaProcess" ,  "pattern" : "(jvmwatcher.test.TestJavaProcess)"},
-        { "shortname" : "Tomcat" ,  "pattern" : "(tomcat)"}
+        { "shortname" : "Tomcat" ,  "pattern" : "(org.apache.catalina)"}
       ]
     }
 
