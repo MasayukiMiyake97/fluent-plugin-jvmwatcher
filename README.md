@@ -1,12 +1,12 @@
 Java VM status input plugin for Fluent
 ====
 fluent-plugin-jvmwatcher is input plugin which collects the CPU usage rate and the memory usage of more than one JavaVM, information on GC to the constant period.
-The collection of the CPU usage rate and the memory usage, the information on GC goes in JVMWatcher from JavaVM.
+The collection of the CPU usage rate and the memory usage, the information on GC goes in JVMWatcher from JavaVM.  
 fluent-plugin-jvmwatcher is collecting the condition of JavaVM in summoning JVMWatcher from inside.
 
-fluent-plugin-jvmwatcherは、複数のJavaVMの、CPU使用率やメモリ使用量、GCの情報を、一定周期に収集するinput pluginです。
-JavaVMから、CPU使用率やメモリ使用量、GCの情報の収集は、JVMWatcherで行っています。
-fluent-plugin-jvmwatcherは、内部からJVMWatcherを呼び出すことで、JavaVMの状態を収集しています。
+fluent-plugin-jvmwatcherは、複数のJavaVMの、CPU使用率やメモリ使用量、GCの情報を、一定周期に収集するinput pluginです。  
+JavaVMから、CPU使用率やメモリ使用量、GCの情報の収集は、JVMWatcherで行っています。  
+fluent-plugin-jvmwatcherは、内部からJVMWatcherを呼び出すことで、JavaVMの状態を収集しています。  
 
 JVMWatcher -> https://github.com/MasayukiMiyake97/JVMWatcher
 
@@ -59,11 +59,11 @@ gemでインストールした、fluent-plugin-jvmwatcherのディレクトリ�
 
 
 ###Java process listup.
-Before creating the definition file of filtering, it executes JvmProcCheck.sh command and it makes output the list of the Java process which is working on the host.
-It finds the character string which suited the key word to use for the regular expression to set to "pattern" from the name of the Java process which is output by [ CommandLine ] of the list.
+Before creating the definition file of filtering, it executes JvmProcCheck.sh command and it makes output the list of the Java process which is working on the host.  
+It finds the character string which suited the key word to use for the regular expression to set to "pattern" from the name of the Java process which is output by [ CommandLine ] of the list.  
 
-フィルタリングの定義ファイルを作成する前に、JvmProcCheck.shコマンドを実行して、ホスト上で動作しているJavaプロセスの一覧を出力させます。
-一覧の[CommandLine]に出力されるJavaプロセスの名称から、"pattern"に設定する正規表現に使用するキーワードに適した文字列を、見つけ出します。
+フィルタリングの定義ファイルを作成する前に、JvmProcCheck.shコマンドを実行して、ホスト上で動作しているJavaプロセスの一覧を出力させます。  
+一覧の[CommandLine]に出力されるJavaプロセスの名称から、"pattern"に設定する正規表現に使用するキーワードに適した文字列を、見つけ出します。  
 
     cd lib/fluent/plugin/jvmwatcher/bin
     ./JvmProcCheck.sh
@@ -79,13 +79,13 @@ Output
     -- process list end   --
 
 ###Java process filtering check.
-Create the definition file of filtering from the found key word and preserve it under config.
-It executes JvmProcCheck.sh command and it confirms that only a Java process for the purpose is done by filtering by the definition file of created filtering.
-The way of confirming set the definition file of created filtering to the argument of the JvmProcCheck.sh command and execute it.
+Create the definition file of filtering from the found key word and preserve it under config.  
+It executes JvmProcCheck.sh command and it confirms that only a Java process for the purpose is done by filtering by the definition file of created filtering.  
+The way of confirming set the definition file of created filtering to the argument of the JvmProcCheck.sh command and execute it.  
 
-見つけ出したキーワードから、フィルタリングの定義ファイルを作成し、configの下に保存して下さい。
-作成したフィルタリングの定義ファイルによって、目的のJavaプロセスだけがフィルタリングされることは、JvmProcCheck.shコマンドを実行して確認します。
-確認方法は、作成したフィルタリングの定義ファイルを、JvmProcCheck.shコマンドの引数に設定して、実行してください。
+見つけ出したキーワードから、フィルタリングの定義ファイルを作成し、configの下に保存して下さい。  
+作成したフィルタリングの定義ファイルによって、目的のJavaプロセスだけがフィルタリングされることは、JvmProcCheck.shコマンドを実行して確認します。  
+確認方法は、作成したフィルタリングの定義ファイルを、JvmProcCheck.shコマンドの引数に設定して、実行してください。  
 
     ./JvmProcCheck.sh ../config/filter_config.json
 
@@ -99,16 +99,16 @@ Output
 
 
 ##JVM status log sample
-It is the sample of the log which was output from jvmwatcher.
-This sample is outputting only a necessary Java process using filter_config_path of the configuration.
-The name to set to "shortname" of the definition file of filtering is output by "name" of the output log.
-When not using filter_config_path of the configuration, the contents which are the same as "display_name" are output by "shortname".
-Also, the log of all Java processes of the node is output.
+It is the sample of the log which was output from jvmwatcher.  
+This sample is outputting only a necessary Java process using filter_config_path of the configuration.  
+The name to set to "shortname" of the definition file of filtering is output by "name" of the output log.  
+When not using filter_config_path of the configuration, the contents which are the same as "display_name" are output by "shortname".  
+Also, the log of all Java processes of the node is output.  
 
-jvmwatcherから出力されたログのサンプルです。
-このサンプルは、コンフィグレーションのfilter_config_pathを使用して、必要なJavaプロセスだけを出力しています。
-出力されているログの"name"には、フィルタリングの定義ファイルの"shortname"に設定している名称が出力されます。
-コンフィグレーションのfilter_config_pathを使用しない場合は、"shortname"に"display_name"と同じ内容が出力されます。また、ノードのすべてのJavaプロセスのログが出力されます。
+jvmwatcherから出力されたログのサンプルです。  
+このサンプルは、コンフィグレーションのfilter_config_pathを使用して、必要なJavaプロセスだけを出力しています。  
+出力されているログの"name"には、フィルタリングの定義ファイルの"shortname"に設定している名称が出力されます。  
+コンフィグレーションのfilter_config_pathを使用しない場合は、"shortname"に"display_name"と同じ内容が出力されます。また、ノードのすべてのJavaプロセスのログが出力されます。  
 
     2013-05-11T13:53:50+09:00       jvmwatcher.log  {"logtime":1368248030423,"host_name":"nanoha","proc_state":"START_PROCESS","pid":2677,"name":"Tomcat","display_name":"org.apache.catalina.startup.Bootstrap start","start_time":1368235715885,"up_time":12314590,"cpu_usage":0.13756041,"compile_time":2280,"c_load_cnt":2110,"c_unload_cnt":0,"c_total_load_cnt":2111,"th_cnt":15,"daemon_th_cnt":14,"peak_th_cnt":15,"heap_init":62766272,"heap_used":14218752,"heap_commit":60227584,"heap_max":892928000,"notheap_init":24313856,"notheap_used":18505232,"notheap_commit":31784960,"notheap_max":224395264,"pending_fin_cnt":0,"total_phy_mem_size":4017041408,"total_swap_mem_size":4160741376,"free_phy_mem_size":1830621184,"free_swap_mem_size":4160741376,"commit_vmem_size":2432827392,"gc_collect":[{"gc_mgr_name":"PS MarkSweep","gc_coll_cnt":4,"gc_coll_time":159},{"gc_mgr_name":"PS Scavenge","gc_coll_cnt":7,"gc_coll_time":44}]}
     2013-05-11T13:53:51+09:00       jvmwatcher.log  {"logtime":1368248031423,"host_name":"nanoha","proc_state":"LIVE_PROCESS","pid":2677,"name":"Tomcat","display_name":"org.apache.catalina.startup.Bootstrap start","start_time":1368235715885,"up_time":12315551,"cpu_usage":4.162331,"compile_time":2334,"c_load_cnt":2153,"c_unload_cnt":0,"c_total_load_cnt":2153,"th_cnt":15,"daemon_th_cnt":14,"peak_th_cnt":15,"heap_init":62766272,"heap_used":15915928,"heap_commit":60227584,"heap_max":892928000,"notheap_init":24313856,"notheap_used":18749552,"notheap_commit":31784960,"notheap_max":224395264,"pending_fin_cnt":0,"total_phy_mem_size":4017041408,"total_swap_mem_size":4160741376,"free_phy_mem_size":1805737984,"free_swap_mem_size":4160741376,"commit_vmem_size":2432827392,"gc_collect":[{"gc_mgr_name":"PS MarkSweep","gc_coll_cnt":4,"gc_coll_time":159},{"gc_mgr_name":"PS Scavenge","gc_coll_cnt":7,"gc_coll_time":44}]}
