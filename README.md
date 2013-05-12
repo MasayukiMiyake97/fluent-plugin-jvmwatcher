@@ -30,9 +30,9 @@ Then fluent automatically loads the plugin installed.
       tag jvmwatcher.log
     </source>
 
- 1. log_interval <- It is the interval by which the condition is acquired from JavaVM.The unit is msec.
+ 1. log_interval <- It is the interval by which the condition is acquired from JavaVM(The millisecond unit).
  2. log_buff_num <- It is the collection number of times of the log which outputs log outside.
- 3. jvm_refind_interval <- It is the interval which updates JavaVM of the collection object.The unit is msec.This value doesn't set an extremely short value.Make 10000 ( msec ) a standard even if it is short.
+ 3. jvm_refind_interval <- It is the interval which updates JavaVM of the collection object(The millisecond unit).This value doesn't set an extremely short value.Make 10000 ( msec ) a standard even if it is short.
  4. filter_config_path <- filtering Configuration file name.The definition with this item isn't indispensable.
 
 ## filtering Configuration file
