@@ -134,6 +134,8 @@ In the date and time which is output at the head of the log, it is generating fr
 
 ログの先頭に出力されている日時は、実際にJavaVMから情報を取得した時間である"logtime"から生成しています。
 
+log output format <https://github.com/MasayukiMiyake97/fluent-plugin-jvmwatcher/wiki/Log-outout-format>
+
 ##Requirements
   JDK >= 1.6
   
