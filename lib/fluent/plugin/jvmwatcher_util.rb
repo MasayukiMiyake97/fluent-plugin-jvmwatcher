@@ -15,28 +15,26 @@ module JvmwatcherUtil
 
     java_path = nil
 
+    # find java command path
     $LOAD_PATH.map do |load_path|
       path = File.join(load_path, "fluent/plugin")  # make fluentd plugin path
       if File.directory?(path)
 
-        # find target directory
-        Dir.glob("#{path}/jvmwatcher/#{dir_name}").each do |path_name|
+        # find target java directory
+        path_name = "#{path}/jvmwatcher/#{dir_name}"
+        
+        next unless File.directory?(path_name)  # chech directory
 
-          next unless File.directory?(path_name)  # chech directory
-
-          if file_name
-            # check file
-            java_path = File.join(path_name, file_name)
-            java_path = nil unless File.file?(java_path)
-          else
-            java_path = path_name
-          end
-
-          break if java_path
+        if file_name
+          # check file
+          java_path = File.join(path_name, file_name)
+          java_path = nil unless File.file?(java_path)
+        else
+          java_path = path_name
         end
-      end
 
-      break if java_path
+        break if java_path
+      end
     end
 
     return java_path
