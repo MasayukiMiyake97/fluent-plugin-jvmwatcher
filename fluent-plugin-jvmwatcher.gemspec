@@ -3,7 +3,7 @@ $:.push File.expand_path('../lib', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.name          = "fluent-plugin-jvmwatcher"
-  gem.version       = "0.1.4"
+  gem.version       = "0.1.5"
   gem.authors       = ["MasayukiMiyake"]
   gem.email         = ["masayukimiyake97@gmail.com"]
   gem.description   = %q{It is the input plugin of fluentd which collects the condition of Java VM.}
