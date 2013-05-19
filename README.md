@@ -134,13 +134,13 @@ In the date and time which is output at the head of the log, it is generating fr
 
 ログの先頭に出力されている日時は、実際にJavaVMから情報を取得した時間である"logtime"から生成しています。
 
-log output format <https://github.com/MasayukiMiyake97/fluent-plugin-jvmwatcher/wiki/Log-outout-format>
+log output format <https://github.com/MasayukiMiyake97/fluent-plugin-jvmwatcher/wiki/Log-output-format>
 
 ##Requirements
   JDK >= 1.6
   
   * On the Linux ( CentOS ), it is OpenJDK In 1.6 pieces of environment, it is doing an operations check.The operations check doesn't go but probably, it works on Ubuntu.
-  * fluent-plugin-jvmwatcher is using tools.jar which JDK is providing.Therefore, in the JRE environment which tools.jar isn't contained in, it doesn't work.Certainly, use in the environment which JDK is installed in.
+  * fluent-plugin-jvmwatcher is using tools.jar which JDK is providing.Therefore, in the JRE environment which tools.jar isn't contained in, it doesn't work.Certainly, use in the environment which JDK is installed in.(yum install java-1.6.0-openjdk-devel)
 
 ##Copyright
 Copyright (c) 2013 MasayukiMiyake
